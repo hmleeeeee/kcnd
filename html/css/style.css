@@ -1910,8 +1910,21 @@ button:focus {
   padding: 0.2rem 0.4rem;
 }
 
-.btn-group.gap {
+.btn-group {
   gap: 0.4rem;
+}
+
+.btn-group.nogap {
+  gap: 0;
+}
+
+.btn-group.btn-search {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-group.btn-search .btn {
+  padding: 0.25rem 1rem;
 }
 
 .btn-group-sm > .btn, .btn-sm {
@@ -2127,6 +2140,11 @@ button:focus {
 .btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-danger.dropdown-toggle:focus {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #2C8F7B;
 }
 
 .btn-link {
@@ -2469,6 +2487,10 @@ button.dim:active:before {
 }
 
 /* PAGINATIN */
+.pagination.center {
+  justify-content: center;
+}
+
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   border-color: #DDDDDD;
   cursor: default;
@@ -5386,6 +5408,8 @@ body.body-small .footer.fixed {
   line-height: 1.42857;
   padding: 8px;
   vertical-align: top;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* PANELS */
@@ -5902,6 +5926,10 @@ table.table-mail tr td {
 
 .text-white {
   color: #ffffff;
+}
+
+.text-count .number {
+  color: #051766;
 }
 
 .simple_tag {
@@ -10823,6 +10851,55 @@ body.md-skin {
     display: none;
   }
 }
+.tbl-wrap:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.tbl-wrap .tbl-title {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.table.tbl-data tr th,
+.table.tbl-data tr td {
+  text-align: center;
+}
+
+.modal .tbl-wrap .table {
+  background-color: #fff;
+}
+
+.modal .tbl-wrap .table .is-bg {
+  background-color: #F5F5F6;
+}
+
+.modal .modal-footer {
+  justify-content: center;
+}
+
+.modal .modal-footer .btn {
+  min-width: 10rem;
+}
+
+.modal .modal-dialog.modal-sm .modal-footer .btn {
+  min-width: auto;
+  flex: 1;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.checkbox-wrap label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 0;
+}
+
 @media print {
   nav.navbar-static-side {
     display: none;

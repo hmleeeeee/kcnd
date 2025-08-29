@@ -382,6 +382,8 @@ body.body-small .footer.fixed {
   line-height: 1.42857;
   padding: 8px;
   vertical-align: top;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* PANELS */
@@ -903,6 +905,10 @@ table.table-mail tr td {
 
 .text-white {
   color: #ffffff;
+}
+
+.text-count .number {
+  color: $navy;
 }
 
 .simple_tag {
