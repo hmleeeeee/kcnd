@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCND | Main</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet"> <!-- FooTable -->
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="logo-title">ERP <span>배포시스템</span></div>
+                        <div class="logo-element">ERP</div>
+                    </li>
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">배포관리</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="M0001.html">배포 목록</a></li>
+                            <li><a href="M0002.html">배포 정보 등록</a></li>
+                            <li><a href="M0003.html">실행결과 조회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">시스템 관리</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="S0001.html">사용자 관리</a></li>
+                            <li><a href="S0002.html">로그</a></li>
+                            <li><a href="S0003.html">시스템 설정</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li><a role="button" href="#">홈</a></li>
+                        <li><a role="button" href="#">관리자</a></li>
+                        <li><a role="button" href="#">사용자정보</a></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>배포 정보</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item">배포 관리</li>
+                        <li class="breadcrumb-item active"><strong>배포 목록</strong></li>
+                    </ol>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+
+            <div class="wrapper wrapper-content">
+                <div class="ibox-content m-b-sm border-bottom">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nameEl">담당자명</label>
+                                <input type="text" id="nameEl" name="nameEl" value="" placeholder="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-form-label" for="typeEl">유형</label>
+                                <select name="typeEl" id="typeEl" class="form-control">
+                                    <option value="1" selected>전체</option>
+                                    <option value="0">유형1</option>
+                                    <option value="0">유형2</유형>
+                                    <option value="0">유형3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label class="col-form-label" for="searchEl">검색</label>
+                                <input type="text" id="searchEl" name="searchEl" value="" placeholder="서버 아이디, 서버 명, Host" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12 col-sm-offset-2">
+                            <button class="btn btn-white btn-sm" type="button">검색</button>
+                            <button class="btn btn-primary btn-sm" type="button">서버 등록</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5>배포 목록 <span>총 <strong>3</strong>건</span></h5>
+
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
+                                    placeholder="서버 아이디, 서버 명, Host">
+
+                                <table class="footable table table-stripped" data-page-size="10" data-filter=#filter>
+                                    <thead>
+                                        <tr>
+                                            <th data-sortable="true">서버 아이디</th>
+                                            <th data-sort-ignore="true">서버명</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">유형</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">Host</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">Post</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">ID</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">연결상태</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">등록자</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">등록일시</th>
+                                        </tr>
+                                    </thead>
+                                        <tbody>
+                                        <tr class="gradeX">
+                                            <td>SVR-001</td>
+                                            <td>STG 서버</td>
+                                            <td>STG</td>
+                                            <td>10.222.111.221</td>
+                                            <td>20022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeC">
+                                            <td>SVR-002</td>
+                                            <td>PRD #1 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.222</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>SVR-003</td>
+                                            <td>PRD #2 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.223</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>SVR-004</td>
+                                            <td>PRD #3 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.224</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr class="gradeA">
+                                            <td>SVR-005</td>
+                                            <td>PRD #4 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>SVR-006</td>
+                                            <td>PRD #5 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>SVR-007</td>
+                                            <td>PRD #6 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>SVR-008</td>
+                                            <td>PRD #7 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td>SVR-009</td>
+                                            <td>PRD #8 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeC">
+                                            <td>SVR-010</td>
+                                            <td>PRD #9 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeC">
+                                            <td>SVR-011</td>
+                                            <td>PRD #10 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="gradeU">
+                                            <td>SVR-012</td>
+                                            <td>PRD #11 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                       <tr class="gradeU">
+                                            <td>SVR-013</td>
+                                            <td>PRD #12 서버</td>
+                                            <td>PRD</td>
+                                            <td>10.222.111.225</td>
+                                            <td>30022</td>
+                                            <td>deployuser</td>
+                                            <td>정상</td>
+                                            <td>홍길동</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="9">
+                                                <ul class="pagination float-right"></ul>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div>
+                    <strong>Copyright</strong> futurentech &copy; 2025
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- FooTable -->
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function() {
+            $('.footable').footable();
+        });
+    </script>
+</body>
+</html>
