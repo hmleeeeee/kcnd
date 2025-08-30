@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>KCND | Login</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,16 +26,20 @@
                 <h3>로그인</h3>
             </div>
             <div class="ibox-content">
-                <form class="login-form" role="form" action="index.html">
-                    <div class="form-group"><label class="col-form-label">USER ID</label>
-                        <div class=""><input type="text" class="form-control" placeholder="아이디 입력" required="required"></div>
+                <form class="login-form" role="form" action="M0001.html">
+                    <div class="form-group">
+                        <label for="inp01" class="col-form-label">USER ID</label>
+                        <input type="text" id="inp01" class="form-control" placeholder="아이디 입력" required="required">
                     </div>
-                    <div class="form-group"><label class="col-form-label">PASSWORD</label>
-                        <div class=""><input type="password" class="form-control" placeholder="비밀번호 입력" required="required"></div>
+                    <div class="form-group">
+                        <label for="inp02" class="col-form-label">PASSWORD</label>
+                        <input type="password" id="inp02" class="form-control" placeholder="비밀번호 입력" maxlength="" required="required">
                     </div>
-                    <button type="submit" class="btn btn-primary block full-width m-b">로그인</button>
-
-                    <a class="btn btn-sm btn-white btn-block" href="register.html">아이디/비밀번호 찾기</a>
+                    
+                    <div class="btn-set">
+                        <button type="submit" class="btn btn-primary block full-width">로그인</button>
+                        <a class="btn btn-text m-t-xs" href="#none">아이디/비밀번호 찾기</a>
+                    </div>
                 </form>
             </div>
         </div>
