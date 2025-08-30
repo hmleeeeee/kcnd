@@ -7,10 +7,12 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-    
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet"> <!-- CheckboxCustom -->
     <link href="css/plugins/footable/footable.core.css" rel="stylesheet"> <!-- FooTable -->
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 </head>
 
 <body>
@@ -73,63 +75,63 @@
                 <div class="ibox-content m-b-sm border-bottom">
                     <div class="row">
                         <div class="col-sm-4">
-                            <div class="form-group">
-                                <label class="col-form-label" for="nameEl">담당자명</label>
-                                <input type="text" id="nameEl" name="nameEl" value="" placeholder="" class="form-control">
+                            <div class="form-group row">
+                                <label for="nameEl" class="col-lg-2 col-form-label">담당자명</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="nameEl" placeholder="" class="form-control">
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="form-group">
-                                <label class="col-form-label" for="typeEl">유형</label>
-                                <select name="typeEl" id="typeEl" class="form-control">
-                                    <option value="1" selected>전체</option>
-                                    <option value="0">유형1</option>
-                                    <option value="0">유형2</유형>
-                                    <option value="0">유형3</option>
-                                </select>
+                            <div class="form-group row">
+                                <label for="typeEl" class="col-lg-2 col-form-label">유형</label>
+                                <div class="col-lg-10">
+                                    <select name="typeEl" id="typeEl" class="form-control">
+                                        <option value="1" selected>전체</option>
+                                        <option value="0">유형1</option>
+                                        <option value="0">유형2</유형>
+                                        <option value="0">유형3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group row">
+                                <label for="searchEl" class="col-lg-2 col-form-label">검색</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="searchEl" name="searchEl" value="" placeholder="서버 아이디, 서버 명, Host" class="form-control">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="form-group">
-                                <label class="col-form-label" for="searchEl">검색</label>
-                                <input type="text" id="searchEl" name="searchEl" value="" placeholder="서버 아이디, 서버 명, Host" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-12 col-sm-offset-2">
-                            <button class="btn btn-white btn-sm" type="button">검색</button>
-                            <button class="btn btn-primary btn-sm" type="button">서버 등록</button>
-                        </div>
+                    <!-- <div class="hr-line-dashed"></div> -->
+                    <div class="btn-group btn-search">
+                        <button class="btn btn-white btn-sm" type="button">검색</button>
+                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#popup1">서버 등록</button> <!-- data-target 속성과 modal id 값 매칭 -->
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="ibox ">
+                        <div class="ibox">
                             <div class="ibox-title">
-                                <h5>배포 목록 <span>총 <strong>3</strong>건</span></h5>
+                                <h5 class="text-count">배포 목록 <span>총 <strong class="number">3</strong>건</span></h5>
 
                                 <div class="ibox-tools">
                                     <a class="collapse-link">
                                         <i class="fa fa-chevron-up"></i>
                                     </a>
-                                    <a class="close-link">
+                                    <!-- <a class="close-link">
                                         <i class="fa fa-times"></i>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
                             <div class="ibox-content">
-                                <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
-                                    placeholder="서버 아이디, 서버 명, Host">
-
                                 <table class="footable table table-stripped" data-page-size="10" data-filter=#filter>
                                     <thead>
                                         <tr>
-                                            <th data-sortable="true">서버 아이디</th>
-                                            <th data-sort-ignore="true">서버명</th>
+                                            <th data-sortable="true">서버 아이디</th> <!-- sortable 기능 사용시 data-sortable="true" 작성 -->
+                                            <th data-sort-ignore="true">서버명</th> <!-- footable은 기본적으로 sortable 아이콘 활성화시키므로 숨김처리시 data-sort-ignore="true" 작성 -->
                                             <th data-sort-ignore="true" data-hide="phone,tablet">유형</th>
                                             <th data-sort-ignore="true" data-hide="phone,tablet">Host</th>
                                             <th data-sort-ignore="true" data-hide="phone,tablet">Post</th>
@@ -140,7 +142,7 @@
                                         </tr>
                                     </thead>
                                         <tbody>
-                                        <tr class="gradeX">
+                                        <tr class="gradeX" data-toggle="modal" data-target="#popup2"> <!-- data-target 속성과 modal id 값 매칭 -->
                                             <td>SVR-001</td>
                                             <td>STG 서버</td>
                                             <td>STG</td>
@@ -288,7 +290,7 @@
                                     <tfoot>
                                         <tr>
                                             <td colspan="9">
-                                                <ul class="pagination float-right"></ul>
+                                                <ul class="pagination center"></ul>
                                             </td>
                                         </tr>
                                     </tfoot>
@@ -297,6 +299,307 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 서버 등록 팝업 -->
+                <div class="modal inmodal" id="popup1" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title">서버 등록</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="tbl-wrap">
+                                    <p class="tbl-title">서버 상세</p>
+                                    <table class="table table-bordered">
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>서버 아이디</th>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="SVR-001">
+                                                    </div>
+                                                </td>
+                                                <th>담당자</th>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="홍길동">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>서버 유형</th>
+                                                <td>
+                                                    <div class="checkbox-wrap">
+                                                        <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> STG</label></div>
+                                                        <div class="i-checks"><label> <input type="checkbox" value="" checked> <i></i> PRD</label></div>
+                                                    </div>
+                                                </td>
+                                                <th>STG 등록일시</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>서버 명</th>
+                                                <td colspan="3">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="PRD #1 서버">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tbl-wrap">
+                                    <p class="tbl-title">SSH 접속 정보</p>
+                                    <table class="table table-bordered">
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>Host</th>
+                                                <td>
+                                                    <div class="form-group has-btn">
+                                                        <input type="text" class="form-control" value="10.222.111.222">
+                                                        <button type="button" class="btn btn-sm btn-green" data-toggle="modal" data-target="">접속 테스트</button>
+                                                    </div>
+                                                </td>
+                                                <th>Port</th>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="20022">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>User ID</th>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="deployuser">
+                                                    </div>
+                                                </td>
+                                                <th>Password</th>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control" value="aaaabcde123">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tbl-wrap">
+                                    <p class="tbl-title">DB 접속 정보</p>
+                                    <table class="table table-bordered">
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>Host</th>
+                                                <td>
+                                                    <div class="form-group has-btn">
+                                                        <input type="text" class="form-control" value="11521">
+                                                        <button type="button" class="btn btn-sm btn-green" data-toggle="modal" data-target="">접속 테스트</button>
+                                                    </div>
+                                                </td>
+                                                <th>Port</th>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="20022">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>User ID</th>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="oracleuser">
+                                                    </div>
+                                                </td>
+                                                <th>Password</th>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control" value="aaaabcde123">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tbl-wrap">
+                                    <p class="tbl-title">WLS Managerd Service Component</p>
+                                    <table class="table table-bordered">
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>Component's</th>
+                                                <td colspan="3">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" value="oacore_server1,oacore_server2,oacore_server3,oacore_server4,oafm_server1,forms_server1">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">저장</button>
+                                <button type="button" class="btn btn-white" data-dismiss="modal">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //서버 등록 팝업 -->
+
+                <!-- 서버 상세 팝업 -->
+                <div class="modal inmodal" id="popup2" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title">서버 상세</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="tbl-wrap">
+                                    <p class="tbl-title">서버 상세</p>
+                                    <table class="table table-bordered">
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>서버 아이디</th>
+                                                <td>SVR-001</td>
+                                                <th>담당자</th>
+                                                <td>홍길동</td>
+                                            </tr>
+                                            <tr>
+                                                <th>서버 유형</th>
+                                                <td>
+                                                    <div class="checkbox-wrap">
+                                                        <div class="i-checks"><label> <input type="radio" name="serverType" value=""> <i></i> STG</label></div>
+                                                        <div class="i-checks"><label> <input type="radio" name="serverType" value="" checked> <i></i> PRD</label></div>
+                                                    </div>
+                                                </td>
+                                                <th>STG 등록일시</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>서버 명</th>
+                                                <td colspan="3">PRD #1 서버</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tbl-wrap">
+                                    <p class="tbl-title">SSH 접속 정보</p>
+                                    <table class="table table-bordered">
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>Host</th>
+                                                <td>
+                                                    <div class="form-group has-btn">
+                                                        10.222.111.222
+                                                        <button type="button" class="btn btn-sm btn-green" data-toggle="modal" data-target="">접속 테스트</button>
+                                                    </div>
+                                                </td>
+                                                <th>Port</th>
+                                                <td>20022</td>
+                                            </tr>
+                                            <tr>
+                                                <th>User ID</th>
+                                                <td>deployuser</td>
+                                                <th>Password</th>
+                                                <td>**********</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tbl-wrap">
+                                    <p class="tbl-title">DB 접속 정보</p>
+                                    <table class="table table-bordered">
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>Host</th>
+                                                <td>
+                                                    <div class="form-group has-btn">
+                                                        11521
+                                                        <button type="button" class="btn btn-sm btn-green" data-toggle="modal" data-target="">접속 테스트</button>
+                                                    </div>
+                                                </td>
+                                                <th>Port</th>
+                                                <td>20022</td>
+                                            </tr>
+                                            <tr>
+                                                <th>User ID</th>
+                                                <td>oracleuser</td>
+                                                <th>Password</th>
+                                                <td>**********</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tbl-wrap">
+                                    <p class="tbl-title">WLS Managerd Service Component</p>
+                                    <table class="table table-bordered">
+                                        <colgroup>
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                            <col style="width: 20%;">
+                                            <col style="width: 30%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>Component's</th>
+                                                <td colspan="3">
+                                                    oacore_server1,oacore_server2,oacore_server3,oacore_server4,oafm_server1,forms_server1
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-white" data-dismiss="modal">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //서버 상세 팝업 -->
             </div>
 
             <div class="footer">
@@ -321,9 +624,16 @@
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
 
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
     <!-- Page-Level Scripts -->
     <script>
         $(document).ready(function() {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
             $('.footable').footable();
         });
     </script>
