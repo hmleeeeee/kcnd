@@ -5,6 +5,36 @@
   }
 }
 
+/* class */
+.ellipsis {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 300px;
+}
+td.ellipsis {
+  display: table-cell;
+  width: fit-content;
+  word-break: normal;
+}
+@media (max-width: 1200px) {
+  .ellipsis {
+    max-width: 100px;
+  }
+}
+@media (max-width: 1024px) {
+  .ellipsis {
+    max-width: 0;
+  }
+}
+a.link {
+  color: #676a6c;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* table */
 .tbl-wrap:not(:first-child) {
   margin-top: 1rem;
@@ -14,7 +44,13 @@
   background-color: #F5F5F6;
 }
 .tbl-wrap .tbl-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 4px;
+}
+.tbl-wrap .tbl-title > p {
+  margin-bottom: 0;
   font-size: 14px;
   font-weight: 500;
 }
@@ -24,46 +60,78 @@
 }
 
 /* form elemeent */
-.form-group.has-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  margin-bottom: 0;
+.search-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
 }
-.form-group.has-btn:has(.form-control) .btn-sm {
-  padding: .45rem .5rem;
+.search-group .form-control {
+  max-width: 12rem;
 }
+.search-group .input-group-btn {
+  margin-left: 2px;
+}
+.search-group .input-group-btn .btn {
+  line-height: 21px;
+}
+.ibox-title .ibox-tools:has(.btn-group) {
+  top: 10px;
+}
+.datetimepicker-wrap {
+  display: flex;
+  gap: 5px;
+}
+
 .checkbox-wrap {
   display: flex;
   align-items: center;
-  gap: .4rem;
+  gap: 5px;
 }
 .checkbox-wrap label {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   margin-bottom: 0;
+}
+.row .col-form-label {
+  white-space: nowrap;
 }
 
 /* modal */
-.modal .modal-dialog.modal-lg {
-  max-width: 1100px;
+@media (min-width: 1024px) {
+  .modal-xlg {
+    max-width: 1100px;
+  }
 }
+
 .modal .modal-body {
   overflow-y: auto;
   max-height: 75vh;
 }
+
 .modal .tbl-wrap .table {
   background-color: #fff;
 }
+
 .modal .modal-footer {
   justify-content: center;
 }
+
 .modal .modal-footer .btn {
   min-width: 10rem;
+}
+@media (max-width: 1024px) {
+  .modal .modal-footer .btn {
+    flex: 1;
+    min-width: auto;
+    max-width: 10rem;
+  }
 }
 
 .modal .modal-dialog.modal-sm .modal-footer .btn {
   min-width: auto;
   flex: 1;
+}
+.popover.clockpicker-popover {
+  z-index: 2051;
 }

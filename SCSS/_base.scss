@@ -382,6 +382,13 @@ body.body-small .footer.fixed {
   line-height: 1.42857;
   padding: 8px;
   vertical-align: top;
+}
+.table>thead>tr>th:not(.ellipsis),
+.table>tbody>tr>th:not(.ellipsis),
+.table>tfoot>tr>th:not(.ellipsis),
+.table>thead>tr>td:not(.ellipsis),
+.table>tbody>tr>td:not(.ellipsis),
+.table>tfoot>tr>td:not(.ellipsis) {
   white-space: normal;
   word-break: break-word;
 }

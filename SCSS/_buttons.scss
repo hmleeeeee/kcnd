@@ -17,18 +17,28 @@ button:focus {
 }
 
 .btn-group {
-  gap: .4rem;
+  gap: 4px;
 }
 .btn-group.nogap {
   gap: 0;
 }
 
-.btn-group.btn-search {
+.btn-group.btn-search .btn {
+  min-width: 8rem;
+  padding: .25rem 1rem;
+}
+.btn-group.is-center,
+.btn-group.is-end {
   display: flex;
+}
+.btn-group.is-center {
+  justify-content: center;
+}
+.btn-group.is-end {
   justify-content: flex-end;
 }
 .btn-group.btn-search .btn {
-  padding: .25rem 1rem;
+  padding: .25rem 2rem;
 }
 
 .btn-group-sm > .btn, .btn-sm {
