@@ -11007,11 +11007,13 @@ a.link {
 
 .table th.is-bg,
 .table td.is-bg {
-  background-color: #F5F5F6;
+  background-color: #fafafa;
+  vertical-align: middle;
 }
 
 .tbl-wrap .tbl-title {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 4px;
@@ -11063,6 +11065,21 @@ a.link {
   line-height: 21px;
 }
 
+/* ≤768px : Mobile screens */
+@media (max-width: 768px) {
+  .search-group {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .search-group .form-control {
+    flex: 1;
+    max-width: 100%;
+  }
+  .btn-group {
+    flex-wrap: wrap;
+  }
+}
 .ibox-title .ibox-tools:has(.btn-group) {
   top: 10px;
 }
@@ -11095,6 +11112,16 @@ a.link {
 
 .set-order .input-group {
   gap: 4px;
+}
+
+.ibox .ibox-title h5:has(.btn-sm) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.textarea-wrap .btn-group {
+  margin-top: 6px;
 }
 
 /* modal */
