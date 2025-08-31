@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KCND | 배포 정보 등록</title>
+    <title>KCND | 실행결과 조회</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -32,8 +32,8 @@
                         <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">배포관리</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="M0001.html">배포 목록</a></li>
-                            <li class="active"><a href="M0002.html">배포 정보 등록</a></li>
-                            <li><a href="M0003.html">실행결과 조회</a></li>
+                            <li><a href="M0002.html">배포 정보 등록</a></li>
+                            <li class="active"><a href="M0003.html">실행결과 조회</a></li>
                         </ul>
                     </li>
                     <li>
@@ -65,11 +65,11 @@
 
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>배포 등록</h2>
+                    <h2>실행결과 조회</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item">배포 관리</li>
-                        <li class="breadcrumb-item active"><strong>배포 정보 등록</strong></li>
+                        <li class="breadcrumb-item active"><strong>실행결과 조회</strong></li>
                     </ol>
                 </div>
                 <div class="col-lg-2"></div>
@@ -77,10 +77,11 @@
 
             <div class="wrapper wrapper-content">
                 <div class="ibox-content m-b-sm border-bottom">
+                    <h2>실행결과 조회 화면 설계 누락되었습니다</h2>
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label" for="date1">배포일자</label>
+                                <label class="col-sm-2 col-form-label" for="date1">조회일자</label>
                                 <div class="col-sm-10 input-group date">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="date1" type="text" class="form-control" value="">
                                 </div>
@@ -100,8 +101,8 @@
                                 <div class="col-sm-10">
                                     <select name="typeEl" id="typeEl" class="form-control">
                                         <option value="1" selected>전체</option>
-                                        <option value="2">성공</option>
-                                        <option value="3">실패</option>
+                                        <option value="2">옵션1</option>
+                                        <option value="3">옵션2</option>
                                     </select>
                                 </div>
                             </div>
@@ -110,7 +111,7 @@
                             <div class="form-group row">
                                 <label for="searchEl" class="col-sm-2 col-form-label">검색</label>
                                 <div class="col-sm-10">
-                                    <input type="text" id="searchEl" name="searchEl" value="" placeholder="배포등록번호, CSR No., 제목, 담당자" class="form-control">
+                                    <input type="text" id="searchEl" name="searchEl" value="" placeholder="검색어 입력" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -125,13 +126,12 @@
                     <div class="col-lg-12">
                         <div class="ibox">
                             <div class="ibox-title">
-                                <h5 class="text-count">배포 목록 <span>총 <strong class="number">15</strong>건</span></h5>
+                                <h5 class="text-count"><span>총 <strong class="number">15</strong>건</span></h5>
 
                                 <div class="ibox-tools">
                                     <div class="btn-group">
-                                        <button class="btn btn-outline btn-primary btn-sm" type="button">배포 등록</button>
-                                        <button class="btn btn-outline btn-primary btn-sm" type="button">STG 예약실행</button>
-                                        <button class="btn btn-outline btn-dark btn-sm" type="button">예약실행 즉시 중단</button>
+                                        <button class="btn btn-outline btn-primary btn-sm" type="button">버튼1</button>
+                                        <button class="btn btn-outline btn-dark btn-sm" type="button">버튼2</button>
                                     </div>
                                     <!-- <a class="collapse-link">
                                         <i class="fa fa-chevron-up"></i>
@@ -144,196 +144,32 @@
                             <div class="ibox-content">
                                 <!-- pagination 불필요시 table에 (footable) 클래스 및 관련 data 속성 삭제 -->
                                 <table class="footable table" data-page-size="10" data-filter=#filter>
-                                    <colgroup>
-                                        <col>
-                                        <col>
-                                        <col style="width: 9%;">
-                                        <col style="width: 9%;">
-                                        <col style="width: 9%;">
-                                        <col style="width: 9%;">
-                                        <col style="width: 9%;">
-                                        <col style="width: 9%;">
-                                    </colgroup>
                                     <thead>
                                         <tr>
-                                            <th data-sort-ignore="true">배포등록번호</th> <!-- sortable 기능 사용시 data-sortable="true" 작성 -->
-                                            <th data-sort-ignore="true">배포 제목</th> <!-- footable은 기본적으로 sortable 아이콘 활성화시키므로 숨김처리시 data-sort-ignore="true" 작성 -->
-                                            <th data-sort-ignore="true" data-hide="phone,tablet">담당자</th>
-                                            <th data-sort-ignore="true" data-hide="phone,tablet">STG</th>
-                                            <th data-sort-ignore="true" data-hide="phone,tablet">PRD1</th>
-                                            <th data-sort-ignore="true" data-hide="phone,tablet">PRD2</th>
-                                            <th data-sort-ignore="true" data-hide="phone,tablet">PRD3</th>
-                                            <th data-sort-ignore="true" data-hide="phone,tablet">CSR No.</th>
+                                            <th data-sort-ignore="true">타이틀1</th> <!-- sortable 기능 사용시 data-sortable="true" 작성 -->
+                                            <th data-sort-ignore="true">타이틀1</th> <!-- footable은 기본적으로 sortable 아이콘 활성화시키므로 숨김처리시 data-sort-ignore="true" 작성 -->
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">타이틀3</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">타이틀4</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">타이틀5</th>
+                                            <th data-sort-ignore="true" data-hide="phone,tablet">타이틀6</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr> 
-                                            <!-- 배포상세정보 팝업은 tr 기준 아닌 제목 링크에 걸어둠 -->
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-003</a></td>
-                                            <td class="text-left ellipsis">20250425 배포20250425 0250425 배포20250425배포20250425배포20250425배포20250425배포20250425배포20250425</td> <!-- (ellipsis) 클래스 말줄임 처리시 사용 -->
-                                            <td>홍길동</td>
-                                            <td>
-                                                <button class="btn-success btn btn-xs" data-toggle="modal" data-target="">100/100</button> <!-- data-target 속성과 modal id 값 매칭 -->
-                                                <!-- <span class="badge badge-success">100/100</span> -->
-                                            </td>
-                                            <td>
-                                                <button class="btn-warning btn btn-xs" data-toggle="modal" data-target="">예약</button>
-                                            </td>
-                                            <td>
-                                                <button class="btn-warning btn btn-xs" data-toggle="modal" data-target="">예약</button>
-                                            </td>
-                                              <td>
-                                                <button class="btn-warning btn btn-xs" data-toggle="modal" data-target="">예약</button>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr> 
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-002</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td>
-                                                <button class="btn-danger btn btn-xs" data-toggle="modal" data-target="#popupList">실패</button> <!-- data-target 속성과 modal id 값 매칭 -->
-                                                <!-- <span class="badge badge-dabtn-danger">실패</span> -->
-                                            </td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
                                         <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>%데이터1%</td>
+                                            <td>%데이터2%</td>
+                                            <td>%데이터3%</td>
+                                            <td>%데이터4%</td>
+                                            <td>%데이터5%</td>
+                                            <td>%데이터6%</td>
                                         </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                            <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                            <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                            <tr>
-                                            <td><a href="#none" class="link" data-toggle="modal" data-target="#popupDetail">ADP-20250425-001</a></td>
-                                            <td class="text-left">20250424 배포</td>
-                                            <td>홍길동</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                        <tr class="nodata">
+                                            <td colspan="6">검색된 결과가 없습니다.</td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td colspan="8">
+                                            <td colspan="6">
                                                 <ul class="pagination float-right"></ul>
                                             </td>
                                         </tr>
