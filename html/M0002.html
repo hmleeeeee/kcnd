@@ -19,7 +19,6 @@
     <link href="css/plugins/clockpicker/clockpicker.css" rel="stylesheet"><!-- Timepicker -->
 
 </head>
-
 <body>
     <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
@@ -81,24 +80,24 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group row">
-                                <label class="col-lg-2 col-form-label" for="date1">배포일자</label>
-                                <div class="col-lg-10 input-group date">
+                                <label class="col-sm-2 col-form-label" for="date1">배포일자</label>
+                                <div class="col-sm-10 input-group date">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="date1" type="text" class="form-control" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group row">
-                                <label for="nameEl" class="col-lg-2 col-form-label">담당자명</label>
-                                <div class="col-lg-10">
+                                <label for="nameEl" class="col-sm-2 col-form-label">담당자명</label>
+                                <div class="col-sm-10">
                                     <input type="text" id="nameEl" placeholder="" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group row">
-                                <label for="typeEl" class="col-lg-2 col-form-label">상태</label>
-                                <div class="col-lg-10">
+                                <label for="typeEl" class="col-sm-2 col-form-label">상태</label>
+                                <div class="col-sm-10">
                                     <select name="typeEl" id="typeEl" class="form-control">
                                         <option value="1" selected>전체</option>
                                         <option value="2">성공</option>
@@ -109,8 +108,8 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group row">
-                                <label for="searchEl" class="col-lg-2 col-form-label">검색</label>
-                                <div class="col-lg-10">
+                                <label for="searchEl" class="col-sm-2 col-form-label">검색</label>
+                                <div class="col-sm-10">
                                     <input type="text" id="searchEl" name="searchEl" value="" placeholder="배포등록번호, CSR No., 제목, 담당자" class="form-control">
                                 </div>
                             </div>
@@ -554,7 +553,7 @@
                                                                     <th>테스트 성공 여부</th>
                                                                     <td colspan="3">
                                                                         <div class="form-group row align-items-center">
-                                                                            <div class="col-lg-4">
+                                                                            <div class="col-sm-4">
                                                                                 <select name="testSelect" id="testSelect" class="form-control">
                                                                                     <option value="1" selected>테스트 진행중</option>
                                                                                     <option value="2">옵션1</option>
@@ -562,7 +561,7 @@
                                                                                     <option value="4">옵션3</option>
                                                                                 </select>              
                                                                             </div>
-                                                                            <div class="col-lg-8">
+                                                                            <div class="col-sm-8">
                                                                                 <div class="checkbox-wrap">
                                                                                     <div class="i-checks"><label> <input type="checkbox" value="" checked="" disabled=""> <i></i> PRD#1</label></div>
                                                                                     <div class="i-checks"><label> <input type="checkbox" value="" disabled=""> <i></i> PRD#2</label></div>
@@ -652,25 +651,25 @@
                                                     </div>
                                                 </div>
                                                 <div class="btn-group is-center">
-                                                    <button class="btn btn-primary btn-sm" type="button">저장</button>
                                                     <button class="btn btn-white btn-sm" type="button">STG 예약실행</button>
                                                     <button class="btn btn-white btn-sm" type="button">PRD 예약등록</button>
+                                                    <button class="btn btn-primary btn-sm" type="button">저장</button>
                                                 </div>
                                                 <div class="hr-line-dashed"></div>
                                                 <div class="tbl-wrap">
                                                     <div class="tbl-title">
                                                         <p>배포 프로그램 목록</p>
                                                         <div class="btn-group">
-                                                            <button class="btn btn-outline btn-default btn-sm" type="button">UP</button>
-                                                            <button class="btn btn-outline btn-default btn-sm" type="button">DOWN</button>
+                                                            <button class="btn btn-outline btn-info btn-sm" type="button">UP</button>
+                                                            <button class="btn btn-outline btn-info btn-sm" type="button">DOWN</button>
                                                             <button class="btn btn-outline btn-primary btn-sm" type="button">Step 추가</button>
-                                                            <button class="btn btn-outline btn-warning btn-sm" type="button">Step 삭제</button>
-                                                            <button class="btn btn-outline btn-info btn-sm" type="button">양식 다운로드</button>
-                                                            <button class="btn btn-outline btn-info btn-sm" type="button">파일 업로드</button>
+                                                            <button class="btn btn-outline btn-primary btn-sm" type="button">Step 삭제</button>
+                                                            <button class="btn btn-outline btn-dark btn-sm" type="button">양식 다운로드</button>
+                                                            <button class="btn btn-outline btn-dark btn-sm" type="button">파일 업로드</button>
                                                         </div>
                                                     </div>
                                                 
-                                                    <div class="">
+                                                    <div class="m-t-xs">
                                                         <table class="table table-striped">
                                                             <thead>
                                                                 <tr>
@@ -730,10 +729,11 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- 필요없을시 삭제 -->
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary" data-dismiss="modal">저장</button>
                                                 <button type="button" class="btn btn-white" data-dismiss="modal">STG 예약실행</button>
                                                 <button type="button" class="btn btn-white" data-dismiss="modal">PRD 예약등록</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">저장</button>
                                             </div>
                                         </div>
                                     </div>
@@ -750,10 +750,14 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="ibox-content m-b-sm border-bottom">
-                                                    <div class="input-group">
-                                                        <label for="nameEl" class="col-lg-1 col-form-label">성명</label>
-                                                       <input type="text" id="nameEl" placeholder="" class="form-control">
-                                                        <button class="btn btn-outline btn-primary btn-xs m-l-xs" type="button">검색</button>
+                                                    <div class="form-group row">
+                                                        <label for="nameEl" class="col-sm-1 col-form-label">성명</label>
+                                                        <div class="col-sm-11">
+                                                            <div class="input-group">
+                                                                <input type="text" id="nameEl" placeholder="" class="form-control">
+                                                                <button class="btn btn-outline btn-primary btn-xs m-l-xs" type="button">검색</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                     
@@ -837,8 +841,8 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary" data-dismiss="modal">선택</button>
                                                 <button type="button" class="btn btn-white" data-dismiss="modal">닫기</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">선택</button>
                                             </div>
                                         </div>
                                     </div>
