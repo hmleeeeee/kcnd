@@ -13,7 +13,7 @@
 </head>
 
 <body class="gray-bg">
-    <div class="middle-box loginscreen animated fadeInDown">
+    <div class="middle-box loginscreen v3 animated fadeInDown">
         <div class="ibox">
            <div class="logo-area">
                 <h1 class="logo-img">
@@ -23,27 +23,20 @@
                 <h2 class="logo-text">CATERING &amp; DUTY-FREE</h2>
             </div>
             <div class="ibox-title">
-                <h3>로그인</h3>
+                <h3>OTP 등록</h3>
             </div>
             <div class="ibox-content">
                 <form class="login-form" role="form" action="M0001.html">
                     <div class="form-group">
-                        <label for="inp01" class="col-form-label">새 비밀번호</label>
-                        <input type="password" id="inp01" class="form-control" maxlength="15" placeholder="새 비밀번호 입력" required>
+                        <div class="qrcode">
+                            <img src="./img/@qrcode.png" alt="qrcode">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="inp02" class="col-form-label">PASSWORD</label>
-                        <input type="password" id="inp02" class="form-control" maxlength="15" placeholder="비밀번호 확인" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inp03" class="col-form-label">OTP 인증코드</label>
-                        <input type="text" id="inp03" class="form-control" inputmode="numeric" pattern="[0-9]*" placeholder="OTP 인증코드 입력" required>
-                        <span class="form-text m-b-none text-danger">비밀번호는 영어 대문자, 소문자, 특수문자, 숫자가 포함된 8-15자리 이어야 합니다.</span>
+                        <span class="form-text m-b-none">QR코드를 스캔하여 기기등록을 하여주세요.</span>
                     </div>
                     <div class="btn-group login-bottom">
-                        <button type="button" class="btn btn-outline btn-primary">비밀번호 변경</button>
-                        <button type="button" class="btn btn-outline btn-primary" onclick="location.href='L0003.html'">OTP 등록</button>
-                        <button type="button" class="btn btn-outline btn-dark" onclick="location.href='L0001.html'">취소</button>
+                        <a class="btn btn-sm btn-white" href="L0002.html">돌아가기</a>
                     </div>
                 </form>
             </div>
@@ -55,4 +48,5 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </body>
+
 </html>

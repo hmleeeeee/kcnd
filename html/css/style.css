@@ -6621,26 +6621,6 @@ body.mini-navbar.fixed-sidebar .logo-element {
   width: 500px;
 }
 
-.loginscreen .qrcode {
-  text-align: center;
-}
-
-.loginscreen .login-form .btn-text {
-  padding: 0;
-  font-size: 12px;
-  color: #676a6c;
-  display: block;
-  text-align: center;
-}
-
-.loginscreen .col-form-label.is-hidden {
-  display: none;
-}
-
-.loginscreen .qrcode > img {
-  width: 180px;
-}
-
 .loginscreen .logo-img {
   display: flex;
   align-items: center;
@@ -6650,12 +6630,63 @@ body.mini-navbar.fixed-sidebar .logo-element {
   font-size: initial;
 }
 
-.loginscreen .logo-area .logo-text {
+.loginscreen .logo-text {
   margin-top: 0;
   font-size: 14px;
   text-align: center;
 }
 
+.loginscreen .qrcode {
+  text-align: center;
+}
+
+.loginscreen .qrcode > img {
+  width: 180px;
+  border-radius: 8px;
+}
+
+.loginscreen .btn-group {
+  gap: 4px;
+}
+
+.loginscreen .btn-group .btn-login {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+}
+
+.loginscreen .login-form .btn-text {
+  display: block;
+  padding: 0;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #676a6c;
+  text-align: center;
+}
+
+.loginscreen .login-bottom {
+  display: flex;
+  margin-top: 20px;
+  gap: 6px;
+}
+
+.loginscreen .login-bottom .btn:not(.btn-text) {
+  flex: 1;
+}
+
+.loginscreen .login-bottom:has(.btn-text) {
+  flex-wrap: wrap;
+}
+
+.loginscreen .login-bottom:has(.btn-text) .btn {
+  flex: auto;
+}
+
+.loginscreen .col-form-label.is-hidden {
+  display: none;
+}
+
+/* v2 디자인 반영 */
 .loginscreen.v2 {
   display: flex;
   flex-wrap: wrap;
@@ -6757,13 +6788,16 @@ body.mini-navbar.fixed-sidebar .logo-element {
 .loginscreen.v2 .login-section .login-form .form-text {
   margin-top: 8px;
   font-size: 12px;
-  line-height: 1.4;
 }
 
 .loginscreen.v2 .login-section .login-form .btn-set {
   display: flex;
   flex-direction: column;
   gap: 10px 6px;
+}
+
+.loginscreen.v2 .login-section .login-form .btn-set .btn-text {
+  margin-top: 0;
 }
 
 .loginscreen.v2 .login-section .login-form .btn-set.btn-three {
@@ -6792,6 +6826,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
 
 .loginscreen.v2 .login-section .login-form .btn-set .btn-default:not(.btn-outline) {
   background-color: #878992;
+  border-color: #878992;
   color: #fff;
 }
 
@@ -6815,15 +6850,9 @@ body.mini-navbar.fixed-sidebar .logo-element {
 
 .loginscreen.v2 .login-section.qr .login-form .qrcode {
   background-color: #F6F6F6;
-  border-radius: 32px;
+  border-radius: 30px;
   padding: 40px;
   box-sizing: border-box;
-}
-
-.loginscreen.v2 .login-section .login-form .qrcode > img {
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
 }
 
 /* ≤1200px : Laptop screens */
@@ -6866,13 +6895,13 @@ body.mini-navbar.fixed-sidebar .logo-element {
   }
   .loginscreen.v2 .bg-section,
   .loginscreen.v2 .bg-section:before {
-    display: none !important;
+    display: none;
   }
   .loginscreen.v2 .login-wrap {
     justify-content: center;
   }
   .loginscreen.v2 .login-section {
-    width: 100% !important;
+    width: 100%;
     padding: 8vh 24px;
     min-height: 100vh;
   }
@@ -6904,6 +6933,70 @@ body.mini-navbar.fixed-sidebar .logo-element {
   }
   .loginscreen.v2 .login-section .login-form .btn-set.btn-three {
     flex-direction: column;
+  }
+}
+/* v3 테마 디벨롭 */
+.loginscreen.v3 .logo-area .logo-text {
+  margin: 0 0 20px;
+}
+
+.loginscreen.v3 .ibox {
+  margin-bottom: 0;
+}
+
+.loginscreen.v3 .ibox-title {
+  padding: 30px 30px 4px 30px;
+  border: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.loginscreen.v3 .ibox-title h3 {
+  margin: 0;
+  color: #333;
+}
+
+.loginscreen.v3 .ibox-content {
+  padding: 10px 30px 32px 30px;
+  border: 0;
+  border-radius: 0 0 20px 20px;
+}
+
+.loginscreen.v3 .ibox .col-form-label {
+  display: none;
+}
+
+.loginscreen.v3 .ibox .form-group {
+  margin-bottom: 0.8rem;
+}
+
+.loginscreen.v3 .ibox .form-control {
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+
+.loginscreen.v3 .ibox .form-text {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.loginscreen.v3 .login-bottom .btn:not(.btn-text) {
+  padding: 0.65rem 0.75rem;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ≤1200px : Laptop screens */
+/* ≤1024px : Tablet screens */
+/* ≤768px : Mobile screens */
+@media (max-width: 768px) {
+  .loginscreen.v3.middle-box {
+    width: 85%;
+  }
+  .loginscreen.v3 .ibox-title {
+    padding: 24px 20px 4px 20px;
+  }
+  .loginscreen.v3 .ibox-content {
+    padding: 8px 20px 28px 20px;
   }
 }
 .loginColumns {
@@ -10935,6 +11028,22 @@ a.link {
   text-align: center;
 }
 
+.table td, .table th {
+  min-height: 30px;
+}
+
+.table tr.nodata td {
+  text-align: center;
+}
+
+.table tr.nodata td::before {
+  font-family: "FontAwesome";
+  content: "\f06a";
+  display: block;
+  color: #999;
+  font-size: 20px;
+}
+
 /* form elemeent */
 .search-group {
   display: flex;
@@ -10978,6 +11087,14 @@ a.link {
 
 .row .col-form-label {
   white-space: nowrap;
+}
+
+.set-order .input-group:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.set-order .input-group {
+  gap: 4px;
 }
 
 /* modal */

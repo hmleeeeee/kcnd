@@ -58,6 +58,19 @@ a.link {
 .table.tbl-data tr td {
   text-align: center;
 }
+.table td, .table th {
+  min-height: 30px;
+}
+.table tr.nodata td {
+  text-align: center;
+}
+.table tr.nodata td::before {
+  font-family: "FontAwesome";
+  content: "\f06a";
+  display: block;
+  color: #999;
+  font-size: 20px;
+}
 
 /* form elemeent */
 .search-group {
@@ -95,6 +108,12 @@ a.link {
 }
 .row .col-form-label {
   white-space: nowrap;
+}
+.set-order .input-group:not(:first-child) {
+  margin-top: 1rem;
+}
+.set-order .input-group {
+  gap: 4px;
 }
 
 /* modal */
