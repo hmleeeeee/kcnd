@@ -77,8 +77,8 @@
                     <div class="col-lg-12">
                         <div class="tabs-container">
                             <ul class="nav nav-tabs">
-                                <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> 사용자 목록</a></li>
-                                <li><a class="nav-link" data-toggle="tab" href="#tab-2"> 사용자 상세</a></li>
+                                <li><a class="nav-link active" data-toggle="tab" href="#tab-1">사용자 목록</a></li>
+                                <li><a class="nav-link" data-toggle="tab" href="#tab-2">사용자 상세</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="tab-1" class="tab-pane active">
@@ -87,16 +87,16 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group row">
-                                                        <label for="nameEl" class="col-lg-2 col-form-label">등록일자</label>
-                                                        <div class="col-lg-10">
+                                                        <label for="nameEl" class="col-sm-2 col-form-label">등록일자</label>
+                                                        <div class="col-sm-10">
                                                            <input class="form-control" type="text" name="daterange" value="01/01/2025 - 01/31/2025" />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group row">
-                                                        <label for="select1" class="col-lg-2 col-form-label">사용자구분</label>
-                                                        <div class="col-lg-10">
+                                                        <label for="select1" class="col-sm-2 col-form-label">사용자구분</label>
+                                                        <div class="col-sm-10">
                                                             <select name="select1" id="select1" class="form-control">
                                                                 <option value="1" selected>전체</option>
                                                                 <option value="2">옵션1</option>
@@ -108,8 +108,8 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group row">
-                                                        <label for="select2" class="col-lg-2 col-form-label">사용자상태</label>
-                                                        <div class="col-lg-10">
+                                                        <label for="select2" class="col-sm-2 col-form-label">사용자상태</label>
+                                                        <div class="col-sm-10">
                                                             <select name="select2" id="select2" class="form-control">
                                                                 <option value="1" selected>전체</option>
                                                                 <option value="2">옵션1</option>
@@ -123,24 +123,24 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group row">
-                                                        <label for="nameEl" class="col-lg-2 col-form-label">조직</label>
-                                                        <div class="col-lg-10">
+                                                        <label for="nameEl" class="col-sm-2 col-form-label">조직</label>
+                                                        <div class="col-sm-10">
                                                             <input type="text" id="nameEl" placeholder="" class="form-control" value="비즈티노">
                                                         </div>
                                                     </div>
                                                 </div>
                                                     <div class="col-sm-4">
                                                     <div class="form-group row">
-                                                        <label for="nameEl" class="col-lg-2 col-form-label">로그인아이디</label>
-                                                        <div class="col-lg-10">
+                                                        <label for="nameEl" class="col-sm-2 col-form-label">로그인아이디</label>
+                                                        <div class="col-sm-10">
                                                             <input type="text" id="nameEl" placeholder="" class="form-control" value="">
                                                         </div>
                                                     </div>
                                                 </div>
                                                     <div class="col-sm-4">
                                                     <div class="form-group row">
-                                                        <label for="nameEl" class="col-lg-2 col-form-label">사용자명</label>
-                                                        <div class="col-lg-10">
+                                                        <label for="nameEl" class="col-sm-2 col-form-label">사용자명</label>
+                                                        <div class="col-sm-10">
                                                             <input type="text" id="nameEl" placeholder="" class="form-control" value="">
                                                         </div>
                                                     </div>
@@ -155,7 +155,7 @@
                                             <div class="col-lg-12">
                                                 <div class="ibox">
                                                     <div class="ibox-title">
-                                                        <!-- <h5 class="text-count">목록 <span>총 <strong class="number">13</strong>건</span></h5> -->
+                                                        <h5 class="text-count"><span>총 <strong class="number">13</strong>건</span></h5>
 
                                                         <!-- <div class="ibox-tools">
                                                             <a class="collapse-link">
@@ -358,7 +358,7 @@
                                             <button id="alertDelete" class="btn btn-outline btn-default btn-sm" type="button">삭제</button>
                                             <button id="alertUpdate" class="btn btn-outline btn-default btn-sm" type="button">저장</button>
                                         </div>
-                                        <div class="m-t-sm">
+                                        <div class="table-responsive m-t-sm">
                                             <table class="table table-bordered">
                                                 <colgroup>
                                                     <col style="width: 20%;">
@@ -368,9 +368,9 @@
                                                 </colgroup>
                                                 <tbody>
                                                     <tr>
-                                                        <th>사용자 아이디</th>
+                                                        <th class="is-bg">사용자 아이디11</th>
                                                         <td>1</td>
-                                                        <th>사용자명</th>
+                                                        <th class="is-bg">사용자명</th>
                                                         <td>
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control" value="관리자">
@@ -378,13 +378,13 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>조직</th>
+                                                        <th class="is-bg">조직</th>
                                                         <td>
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control" value="비즈티노">
                                                             </div>
                                                         </td>
-                                                        <th>사용자 상태</th>
+                                                        <th class="is-bg">사용자 상태</th>
                                                         <td>
                                                             <select name="" id="" class="form-control">
                                                                 <option value="1" selected>사용</option>
@@ -394,7 +394,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>사용자 구분</th>
+                                                        <th class="is-bg">사용자 구분</th>
                                                         <td>
                                                             <select name="" id="" class="form-control">
                                                                 <option value="1" selected>관리자</option>
@@ -402,7 +402,7 @@
                                                                 <option value="2">옵션2</option>
                                                             </select>   
                                                         </td>
-                                                        <th>연락처</th>
+                                                        <th class="is-bg">연락처</th>
                                                         <td>
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control" value="02-111-0000">
@@ -410,13 +410,13 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>휴대폰</th>
+                                                        <th class="is-bg">휴대폰</th>
                                                         <td>
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control" value="02-111-0000">
                                                             </div>
                                                         </td>
-                                                        <th>이메일</th>
+                                                        <th class="is-bg">이메일</th>
                                                         <td>
                                                             <div class="input-group">
                                                                 <input type="email" class="form-control" value="admin@admin.co.kr">
@@ -424,9 +424,9 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>비밀번호 변경일시</th>
+                                                        <th class="is-bg">비밀번호 변경일시</th>
                                                         <td>2025-01-01 12:12:12</td>
-                                                        <th>로그인 실패수</th>
+                                                        <th class="is-bg">로그인 실패수</th>
                                                         <td>1회</td>
                                                     </tr>
                                                 </tbody>
