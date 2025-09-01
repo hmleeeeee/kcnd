@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KCND | 배포 정보</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
     <link href="css/plugins/iCheck/custom.css" rel="stylesheet"> <!-- CheckboxCustom -->
     <link href="css/plugins/footable/footable.core.css" rel="stylesheet"> <!-- FooTable -->
     <link href="css/animate.css" rel="stylesheet">
@@ -14,7 +14,6 @@
 
     <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 </head>
-
 <body>
     <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
@@ -355,8 +354,8 @@
                                                 <th>서버 유형</th>
                                                 <td>
                                                     <div class="checkbox-wrap">
-                                                        <div class="i-checks"><label> <input type="checkbox" value="" checked> <i></i> STG</label></div>
-                                                        <div class="i-checks"><label> <input type="checkbox" value=""> <i></i> PRD</label></div>
+                                                        <div class="i-checks"><label><input type="radio" value="" name="rdo1" checked><i></i>STG</label></div>
+                                                        <div class="i-checks"><label><input type="radio" value="" name="rdo1"><i></i>PRD</label></div>
                                                     </div>
                                                 </td>
                                                 <th>STG 등록일시</th>
@@ -641,12 +640,13 @@
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
-
     <!-- iCheck -->
     <script src="js/plugins/iCheck/icheck.min.js"></script>
+
     <!-- Page-Level Scripts -->
     <script>
         $(document).ready(function() {
+            // 체크박스 커스텀
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
