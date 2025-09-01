@@ -1345,7 +1345,7 @@ h3, h4, h5 {
 }
 
 .nav-header .nav-logo .img-logo.logo2 {
-  width: 30px;
+  width: 22px;
 }
 
 .nav-header .logo2,
@@ -11140,13 +11140,13 @@ a.link {
 .checkbox-wrap {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 }
 
 .checkbox-wrap label {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   margin-bottom: 0;
 }
 
