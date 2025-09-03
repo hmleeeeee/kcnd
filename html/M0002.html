@@ -551,7 +551,8 @@
                                                         <p>배포 상세 정보</p>
                                                     </div>
 
-                                                    <div class="">
+                                                    <!-- 250903 마크업 변경 -->
+                                                    <div class="tbl-double">
                                                         <table class="table table-bordered">
                                                             <colgroup>
                                                                 <col style="width: 20%;">
@@ -569,21 +570,17 @@
                                                                 <tr>
                                                                     <th>테스트 성공 여부</th>
                                                                     <td colspan="3">
-                                                                        <div class="form-group row align-items-center">
-                                                                            <div class="col-sm-4">
-                                                                                <select name="testSelect" id="testSelect" class="form-control">
-                                                                                    <option value="1" selected>테스트 진행중</option>
-                                                                                    <option value="2">옵션1</option>
-                                                                                    <option value="3">옵션2</option>
-                                                                                    <option value="4">옵션3</option>
-                                                                                </select>              
-                                                                            </div>
-                                                                            <div class="col-sm-8">
-                                                                                <div class="checkbox-wrap">
-                                                                                    <div class="i-checks"><label> <input type="checkbox" value="" checked="" disabled=""> <i></i> PRD#1</label></div>
-                                                                                    <div class="i-checks"><label> <input type="checkbox" value="" disabled=""> <i></i> PRD#2</label></div>
-                                                                                    <div class="i-checks"><label> <input type="checkbox" value="" disabled=""> <i></i> PRD#3</label></div>
-                                                                                </div>
+                                                                        <div class="form-group form-rowgroup">
+                                                                            <select name="testSelect" id="testSelect" class="form-control input-s">
+                                                                                <option value="1" selected>테스트 진행중</option>
+                                                                                <option value="2">옵션1</option>
+                                                                                <option value="3">옵션2</option>
+                                                                                <option value="4">옵션3</option>
+                                                                            </select>              
+                                                                            <div class="checkbox-wrap">
+                                                                                <div class="i-checks"><label> <input type="checkbox" value="" checked="" disabled=""> <i></i> PRD#1</label></div>
+                                                                                <div class="i-checks"><label> <input type="checkbox" value="" disabled=""> <i></i> PRD#2</label></div>
+                                                                                <div class="i-checks"><label> <input type="checkbox" value="" disabled=""> <i></i> PRD#3</label></div>
                                                                             </div>
                                                                         </div>
                                                                     </td>
@@ -638,7 +635,7 @@
                                                                         </div>
                                                                     </td>
                                                                 </tr>
-                                                                 <tr>
+                                                                <tr>
                                                                     <th>알림 대상자</th>
                                                                     <td colspan="3">
                                                                         <div class="input-group">
@@ -647,6 +644,16 @@
                                                                         </div>
                                                                     </td>
                                                                 </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table class="table table-bordered">
+                                                            <colgroup>
+                                                                <col style="width: 20%;">
+                                                                <col style="width: 30%;">
+                                                                <col style="width: 20%;">
+                                                                <col style="width: 30%;">
+                                                            </colgroup>
+                                                            <tbody>
                                                                 <tr>
                                                                     <th>제목</th>
                                                                     <td colspan="3">
@@ -666,6 +673,7 @@
                                                             </tbody>
                                                         </table>
                                                     </div>
+                                                    <!-- //250903 마크업 변경 -->
                                                 </div>
                                                 <div class="btn-group is-center">
                                                     <!-- 250904 (btn-sm) 클래스 삭제 -->
@@ -738,26 +746,6 @@
                                                                             <option value="3" selected>Forms</option>
                                                                         </select>
                                                                     </td>
-                                                                    <td>/home/temp/20250201-01-Forms</td>
-                                                                    <td>Test.frm</td>
-                                                                    <td><span class="">파일존재</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><input type="checkbox" class="i-checks" name="listChk"></td>
-                                                                    <td>4</td>
-                                                                    <td>
-                                                                         <div class="form-group">
-                                                                            <input type="text" class="form-control" value="/nas/oracle/deploy/20250810">
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>/home/temp/20250201-01-Forms</td>
-                                                                    <td>Test.frm</td>
-                                                                    <td><span class="">파일존재</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><input type="checkbox" class="i-checks" name="listChk"></td>
-                                                                    <td>5</td>
-                                                                    <td>%일반 텍스트%</td>
                                                                     <td>/home/temp/20250201-01-Forms</td>
                                                                     <td>Test.frm</td>
                                                                     <td><span class="">파일존재</span></td>

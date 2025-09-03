@@ -36,27 +36,7 @@
 .nav.navbar-top-links > li > a:hover, .nav.navbar-top-links > li > a:focus {
   background-color: transparent;
 }
-.navbar-top-links .profile-droopdown .link-block {
-  padding: .25rem 0;
-  color: #6c757d;
-}
-.navbar-top-links .profile-droopdown .user-info {
-  padding: 1rem 1.5rem;
-}
-.navbar-top-links .profile-droopdown .user-info:hover {
-  background-color: #fff;
-}
-.navbar-top-links .profile-droopdown .user-info .user-name {
-  font-size: 14px;
-}
-.navbar-top-links .profile-droopdown .dropdown-divider {
-  margin: 0;
-}
-.navbar-top-links .profile-droopdown .user-info span {
-  display: block;
-  font-size: 12px;
-  line-height: 21px;
-}
+
 .nav > li > a i {
   margin-right: 6px;
 }
@@ -192,41 +172,10 @@
 }
 
 .nav-header {
-  padding: 20px 25px;
+  padding: 33px 25px;
   background-color: $nav-bg;
   background-image: $nav-profile-pattern;
-}
-.nav-header:has(.profile-element) {
-  padding: 33px 25px;
-}
-.nav-header:has(.nav-logo) {
-  padding: 0 25px;
-  border-bottom: 1px solid rgb(243, 243, 244, 0.1);
-  box-sizing: border-box;
-}
-.nav-header .nav-logo {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 61px;
-  margin: 0;
-}
-.nav-header .nav-logo .logo-link {
-  display: inline-flex;
-}
-.nav-header .nav-logo .img-logo {
-  width: 160px;
-}
-.nav-header .nav-logo .img-logo.logo2 {
-  width: 22px;
-}
-.nav-header .logo2,
-.mini-navbar .nav-header .logo1  {
-  display: none;
-}
-.mini-navbar .nav-header .logo2 {
-  display: block;
+
 }
 
 .caret {
@@ -440,13 +389,6 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   color: lighten($navy, 3%);
 }
 
-.logo-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: white;
-  line-height: 1.2;
-}
-
 .logo-element {
   text-align: center;
   font-size: 18px;
@@ -566,9 +508,6 @@ body.mini-navbar .navbar-default .nav > li > a {
   font-size: 16px;
 }
 
-body.mini-navbar .logo-title {
-  display: none;
-}
 body.mini-navbar .logo-element {
   display: block;
 }

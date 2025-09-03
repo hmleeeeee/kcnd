@@ -130,9 +130,7 @@
 }
 
 /* PAGINATIN */
-.pagination.is-center {
-  justify-content: center;
-}
+
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   //background-color: #f4f4f4;
   border-color: #DDDDDD;
@@ -1351,7 +1349,7 @@ select.form-control:not([size]):not([multiple]) {
   display: block;
   margin: 5px 0;
   padding: 5px 10px;
-  color: $grays-9;
+  color: #333;
   text-decoration: none;
   border: 1px solid #e7eaec;
   background: #f5f5f5;
@@ -2661,7 +2659,7 @@ pre {
   margin: 0 0 10px;
   font-size: 13px;
   line-height: 1.42857143;
-  color: $grays-9;
+  color: #333;
   word-break: break-all;
   word-wrap: break-word;
   background-color: lighten($light-gray, 10%);
