@@ -19,6 +19,14 @@ button:focus {
 .btn-group {
   gap: 4px;
 }
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: $btn-border-radius;
+  border-bottom-right-radius: $btn-border-radius;
+}
+.btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:first-child) {
+  border-top-left-radius: $btn-border-radius;
+  border-bottom-left-radius: $btn-border-radius;
+}
 .btn-group.nogap {
   gap: 0;
 }
@@ -42,7 +50,8 @@ button:focus {
 }
 
 .btn-group-sm > .btn, .btn-sm {
-  font-size: .8rem;
+  // font-size: .8rem;
+  font-size: 12px;
 }
 
 .float-e-margins .btn {
@@ -263,8 +272,9 @@ button:focus {
 }
 
 .btn-green {
-  color: #fff;
-  background-color: #2C8F7B;
+  background-color: #fff;
+  color: #1e8162;
+  border: 1px solid #1e8162;
 }
 
 .btn-link {

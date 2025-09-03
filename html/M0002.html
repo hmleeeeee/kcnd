@@ -371,7 +371,7 @@
                                                         <col style="width: 8%;">
                                                         <col style="width: 15%;">
                                                         <col>
-                                                        <col style="width: 16%;">
+                                                        <col style="width: 17%;">
                                                         <col style="width: 10%;">
                                                     </colgroup>
                                                     <thead>
@@ -668,11 +668,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="btn-group is-center">
-                                                    <button class="btn btn-white btn-sm" type="button">STG 예약실행</button>
-                                                    <button class="btn btn-white btn-sm" type="button">PRD 예약등록</button>
-                                                    <button class="btn btn-primary btn-sm" type="button">저장</button>
+                                                    <!-- 250904 (btn-sm) 클래스 삭제 -->
+                                                    <button class="btn btn-white" type="button">STG 예약실행</button>
+                                                    <button class="btn btn-white" type="button">PRD 예약등록</button>
+                                                    <button class="btn btn-primary" type="button">저장</button>
                                                 </div>
-                                                <div class="hr-line-dashed"></div>
+                                                <!-- 250904 div.hr-line-dashed 삭제 -->
                                                 <div class="tbl-wrap">
                                                     <div class="tbl-title">
                                                         <p>배포 프로그램 목록</p>
@@ -686,7 +687,7 @@
                                                         </div>
                                                     </div>
                                                 
-                                                    <div class="m-t-xs">
+                                                    <div class="tbl-datalist"> <!-- 250903 (m-t-xs -> tbl-datalist) 클래스명 변경  -->
                                                         <table class="table table-striped">
                                                             <thead>
                                                                 <tr>
@@ -737,6 +738,26 @@
                                                                             <option value="3" selected>Forms</option>
                                                                         </select>
                                                                     </td>
+                                                                    <td>/home/temp/20250201-01-Forms</td>
+                                                                    <td>Test.frm</td>
+                                                                    <td><span class="">파일존재</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="i-checks" name="listChk"></td>
+                                                                    <td>4</td>
+                                                                    <td>
+                                                                         <div class="form-group">
+                                                                            <input type="text" class="form-control" value="/nas/oracle/deploy/20250810">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>/home/temp/20250201-01-Forms</td>
+                                                                    <td>Test.frm</td>
+                                                                    <td><span class="">파일존재</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="i-checks" name="listChk"></td>
+                                                                    <td>5</td>
+                                                                    <td>%일반 텍스트%</td>
                                                                     <td>/home/temp/20250201-01-Forms</td>
                                                                     <td>Test.frm</td>
                                                                     <td><span class="">파일존재</span></td>
