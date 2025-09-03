@@ -107,6 +107,9 @@
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup2">
                                         로그인 이력 팝업
                                     </button>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup3">
+                                        drag 팝업
+                                    </button>
                                 </div>
                                 <!-- 상태이력 팝업 -->
                                 <div class="modal inmodal" id="popup1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -414,6 +417,31 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- 드래그 팝업 -->
+                                <div class="modal inmodal js-draggable-modal" id="popup3" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header js-drag-handle">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                <h4 class="modal-title">%모달 타이틀%</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <ul>
+                                                    <li>
+                                                        jquery-ui 스크립트 로드 필요<br>
+                                                        <strong>&lt;script src="js/plugins/jquery-ui/jquery-ui.min.js">&lt;/script></strong>
+                                                    </li>
+                                                    <li>드래그 대상(.modal)에 (js-draggable-modal) 클래스 추가</li>
+                                                    <li>드래그 핸들러(.modal-header)에 (js-drag-handle) 클래스 추가</li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-white" data-dismiss="modal">닫기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -552,6 +580,9 @@ $('.demo3').click(function () {
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jquery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
     <!-- Sweet alert -->
     <script src="js/plugins/sweetalert/sweetalert.min.js"></script>

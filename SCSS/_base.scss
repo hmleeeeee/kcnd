@@ -189,6 +189,25 @@ video {
   margin-top: 0;
 }
 
+/* draggable-modal 재정의 */
+.js-draggable-modal .modal-dialog {
+  width: calc(100vw - var(--modal-gutter, 32px));
+  max-width: var(--modal-max, 1200px);
+}
+
+.js-draggable-modal .modal-dialog.modal-sm { --modal-max: 300px; }
+.js-draggable-modal .modal-dialog.modal-lg { --modal-max: 800px; }
+.js-draggable-modal .modal-dialog.modal-xlg { --modal-max: 1100px; }
+
+.js-drag-handle { cursor: move; }
+
+@media (max-width: 575.98px) {
+  .js-draggable-modal .modal-dialog {
+    width: 100vw;
+    max-width: 100vw;
+  }
+}
+
 /* WRAPPERS */
 
 #wrapper {
