@@ -10653,7 +10653,10 @@ a.link {
   background-color: #FBFDFF;
 }
 .table thead > tr th:not(.ellipsis), .table thead > tr td:not(.ellipsis), .table tbody > tr th:not(.ellipsis), .table tbody > tr td:not(.ellipsis), .table tfoot > tr th:not(.ellipsis), .table tfoot > tr td:not(.ellipsis) {
-  word-break: break-all;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-hyphens: auto;
+          hyphens: auto;
 }
 .table thead > tr:has(.form-control, .input-group, .checkbox-wrap) th, .table thead > tr:has(.form-control, .input-group, .checkbox-wrap) td, .table tbody > tr:has(.form-control, .input-group, .checkbox-wrap) th, .table tbody > tr:has(.form-control, .input-group, .checkbox-wrap) td, .table tfoot > tr:has(.form-control, .input-group, .checkbox-wrap) th, .table tfoot > tr:has(.form-control, .input-group, .checkbox-wrap) td {
   padding: 6px 10px;
@@ -10861,7 +10864,7 @@ select.form-control {
 }
 
 .row .col-form-label {
-  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .set-order .input-group:not(:first-child) {
@@ -11445,6 +11448,75 @@ select.form-control {
   }
   .loginscreen.v3 .ibox-content {
     padding: 8px 20px 28px 20px;
+  }
+  .ibox-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 15px;
+    gap: 4px;
+  }
+  .ibox-title h5 {
+    margin-bottom: 0;
+  }
+  .ibox-title .ibox-tools {
+    position: static;
+    display: inline-flex;
+  }
+  .ibox-content .form-group.row .col-form-label {
+    text-align: left;
+  }
+  .ibox-content:has(.table) {
+    overflow-x: auto;
+  }
+  .form-search-group .form-group.row .col-form-label {
+    text-align: left;
+  }
+  .tbl-wrap {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .tbl-wrap .form-group.row .col-form-label {
+    text-align: left;
+  }
+  .tabs-container .panel-body {
+    padding: 15px;
+  }
+  .table {
+    table-layout: auto;
+    overflow: auto;
+  }
+  .table thead > tr th, .table thead > tr td, .table tbody > tr th, .table tbody > tr td {
+    padding: 8px 6px;
+  }
+  .table thead > tr th .input-group,
+  .table thead > tr th .checkbox-wrap, .table thead > tr td .input-group,
+  .table thead > tr td .checkbox-wrap, .table tbody > tr th .input-group,
+  .table tbody > tr th .checkbox-wrap, .table tbody > tr td .input-group,
+  .table tbody > tr td .checkbox-wrap {
+    min-height: initial;
+  }
+  .modal .modal-body {
+    overflow-x: hidden;
+    padding: 20px 20px 30px 20px;
+  }
+  .modal .modal-body .tbl-wrap {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+  }
+  .btn-group.is-end {
+    justify-content: flex-start;
+  }
+  .btn-group.btn-search.is-center {
+    flex-wrap: nowrap;
+  }
+  .btn-group.btn-search.is-center .btn {
+    flex: 1;
+    min-width: initial;
   }
 }
 .popover.clockpicker-popover {

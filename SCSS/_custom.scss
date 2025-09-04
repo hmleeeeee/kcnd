@@ -120,7 +120,11 @@ a.link {
         .input-group,
         .checkbox-wrap { min-height: 32px; }
         &.is-bg { background-color: $light-blue; }
-        &:not(.ellipsis) { word-break: break-all; }
+        &:not(.ellipsis) { 
+          word-break: keep-all; 
+          overflow-wrap: anywhere;
+          hyphens: auto;
+        }
       }
       &:has(.form-control, .input-group, .checkbox-wrap) {
         th, td {
@@ -373,7 +377,7 @@ select.form-control {
   }
 }
 .row .col-form-label {
-  white-space: nowrap;
+  word-break: keep-all;
 }
 .set-order .input-group:not(:first-child) {
   margin-top: 1rem;
@@ -973,6 +977,78 @@ select.form-control {
       .ibox-content {
         padding: 8px 20px 28px 20px;
       }
+    }
+  }
+
+  // common
+  .ibox-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 15px;
+    gap: 4px;
+    h5 { margin-bottom: 0; }
+    .ibox-tools {
+      position: static;
+      display: inline-flex;
+    }
+  }
+  .ibox-content {
+    .form-group.row {
+      .col-form-label { text-align: left; }
+    }
+    &:has(.table) { overflow-x: auto; }
+  }
+  .form-search-group {
+    .form-group.row {
+      .col-form-label { text-align: left; }
+    }
+  }
+  .tbl-wrap {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    .form-group.row {
+       .col-form-label {
+        text-align: left;
+       }
+    }
+  }
+  .tabs-container {
+    .panel-body {
+      padding: 15px;
+    }
+  }
+  .table {
+    table-layout: auto;
+    overflow: auto;
+    thead, tbody {
+      > tr {
+        th, td {
+          padding: 8px 6px;
+        .input-group,
+        .checkbox-wrap { min-height: initial; }
+        }
+      }
+    }
+  }
+  .modal {
+    .modal-body {
+      overflow-x: hidden;
+      padding: 20px 20px 30px 20px;
+      .tbl-wrap {
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+      }
+    }
+  }
+  .btn-group {
+    &.is-end { justify-content: flex-start; }
+    &.btn-search.is-center { flex-wrap: nowrap;
+      .btn { flex: 1; min-width: initial; }
     }
   }
 }
