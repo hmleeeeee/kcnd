@@ -847,11 +847,11 @@ select.form-control {
     &:before {
       content: '';
       position: absolute;
-      bottom: -174px;
-      left: -55px;
+      bottom: 0;
+      left: 0;
       display: block;
-      width: 468px;
-      height: 494px;
+      width: 413px;
+      height: 320px;
       background: url(../img/bg_login.png) no-repeat;
       z-index: 1;
     }
